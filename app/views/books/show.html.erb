@@ -1,0 +1,16 @@
+<h1>Book Information</h1>
+<p>
+  <strong>Title:</strong> <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong> <%= @book.author %>
+</p>
+
+<h2>Ratings</h2>
+<!-- add ratings here -->
+<!-- %= render @book.ratings % -->
+
+<%= link_to 'Back to Listing', books_path %>
+<%= link_to 'Add a rating', new_book_rating_path(book_id: @book.id) %>
+<%= link_to 'Edit this book', edit_book_path(@book) %>
