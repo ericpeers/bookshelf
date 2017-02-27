@@ -25,3 +25,4 @@ There are not tests yet - I was trying to get this done as fast as possible, so 
   * add multiple ratings - show the rating value adjust for average.
   * show a book including the ratings for that book (multiple ratings)
   * add a rating that shows read, but no value for the rating. Average should handle it.
+  * delete a rating like #5,6,7 in a group of ratings

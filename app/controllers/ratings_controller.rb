@@ -30,7 +30,7 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
     @rating.destroy
     #go back to the book in question.
-    redirect_to book_path
+    redirect_to book_path(id: params[:book_id])  #need to tell it which id, otherwise it uses the ratings id for the book id. Urk.
   end
 
   private
