@@ -1,0 +1,25 @@
+<h1>Your bookshelf</h1>
+<!-- strictly speaking, this is a shared bookshelf since I've done no auth/user level login/checks. But shhhhh... -->
+
+<table>
+  <tr><th>ID</th><th>Author</th><th>Title</th><th>ISBN</th><th>Rating</th></tr>
+
+  <% @books.each do |book| %>
+  <tr>
+    <td><%=link_to book.id, book_path(book) %></td>
+    <td><%= book.author %></td>
+    <td><%= book.title  %></td>
+    <td><%= book.isbn   %></td>
+    <td>
+        <!-- this places an if in my view logic, but do I really want to go handle this in my model? Because putting links in my model would stink -->
+        <% if book.ratings.empty? %> <!-- don't double call average which has computational cost -->
+          <%= link_to 'Add a Rating!', new_rating_path %>
+        <% else %>
+          <%= book.average_ratings %>
+        <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "Add a new book", new_book_path %>

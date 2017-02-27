@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 1
+  was_read: false
+  rating: 1.5
+  book: one
+
+two:
+  user: 1
+  was_read: false
+  rating: 1.5
+  book: two
