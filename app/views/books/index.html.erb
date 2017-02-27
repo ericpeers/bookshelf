@@ -13,7 +13,7 @@
     <td>
         <!-- this places an if in my view logic, but do I really want to go handle this in my model? Because putting links in my model would stink -->
         <% if book.ratings.empty? %> <!-- don't double call average which has computational cost -->
-          <%= link_to 'Add a Rating!', new_rating_path %>
+          <%= link_to 'Add a Rating!', new_book_rating_path(book_id: book.id) %>
         <% else %>
           <%= book.average_ratings %>
         <% end %>
