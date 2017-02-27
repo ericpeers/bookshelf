@@ -27,8 +27,8 @@ class RatingsController < ApplicationController
   #
 
   def destroy
-    @rating = rating.find(params[:id])
-    rating.destroy
+    @rating = Rating.find(params[:id])
+    @rating.destroy
     #go back to the book in question.
     redirect_to book_path
   end

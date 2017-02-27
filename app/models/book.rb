@@ -27,14 +27,21 @@ class Book < ApplicationRecord
     total = 0;
     count = 0;
     @ratings.each do |rating|
-      total += rating.rating
-      count += 1
+      #it is possible to mark a book read and not give it a rating.
+      if (! rating.rating.nil?)
+        total += rating.rating
+        count += 1
+      end
+
     end
 
     if total == 0
       return 0
     else
-      return total/count
+      result = total/count
+      return result
+      #(rounding) is best handled in the view. Especially if somebody else wants this code for precise results.
+      #return result.round(2) #don't return a super long float.
     end
 
 
