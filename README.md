@@ -3,9 +3,13 @@
 This app was written for a coding challenge. The challenge: Build a book rating app, in rails, for a single user (with the understanding it may be extended at some later date). A user should be able to create a book, mark it read, and give it a rating. We discussed the D in CRUD is not necessary. Target time for an accomplished rails programmer is a couple of hours. Expected deployment is on heroku and use Postgres.
 
 ## Installation / Running
-bundle install  
+bundle install
+rails db:create
+rails db:migrate
 rails server
 
+### DB setup
+This is setup to run on postgres, with pg_hba.conf set such that passwords/authentication is not required from the localhost. YMMV. Edit database.yml if you don't have such a pg setup.
 
 ## Technical Debt / Design Decisions
 
