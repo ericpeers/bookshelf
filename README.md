@@ -2,6 +2,11 @@
 
 This app was written for a coding challenge. The challenge: Build a book rating app, in rails, for a single user (with the understanding it may be extended at some later date). A user should be able to create a book, mark it read, and give it a rating. We discussed the D in CRUD is not necessary. Target time for an accomplished rails programmer is a couple of hours. Expected deployment is on heroku and use Postgres.
 
+## Installation / Running
+bundle install  
+rails server
+
+
 ## Technical Debt / Design Decisions
 
 I broke the model up into 2 pieces with the intent of adding a user model (login/auth) at a later date. This allows a single book to be created and then assign multiple ratings to it. Ultimately we should have 3-4 tables: a user table, a bookshelf (books of interest or not - possibly including the read state), ratings table (user, book, rating). For now I just put read into the ratings table because the "2h time limit".
