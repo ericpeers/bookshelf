@@ -7,6 +7,8 @@ class Book < ApplicationRecord
   validates :author, presence: true,
             length: {minimum: 1} #assume that some author can have at least a single letter name or symbol like Prince.
 
+  validates :isbn, uniqueness: true
+
   validate :isbn_length
   #this didn't work. So then I switched tactics
   #validates :isbn, length: {in: (10 13)}, uniqueness: true
