@@ -20,5 +20,23 @@ class Book < ApplicationRecord
   end
 
 
+  def average_ratings
+    @ratings = self.ratings
+    total = 0;
+    count = 0;
+    @ratings.each do |rating|
+      total += rating.rating
+      count += 1
+    end
+
+    if total == 0
+      return 0
+    else
+      return total/count
+    end
+
+
+  end
+
 
 end
