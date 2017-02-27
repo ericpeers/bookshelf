@@ -4,7 +4,7 @@ This app was written for a coding challenge. The challenge: Build a book rating 
 
 ## Technical Debt / Design Decisions
 
-I broke the model up into 2 pieces with the intent of adding a user model (login/auth) at a later date. This allows a single book to be created and then assign multiple ratings to it. Ultimately we should have 5 tables: a user table, a bookshelf (books of interest or not - possibly including the read state), ratings table (user, book, rating). For now I just put read into the ratings table because the "2h time limit".
+I broke the model up into 2 pieces with the intent of adding a user model (login/auth) at a later date. This allows a single book to be created and then assign multiple ratings to it. Ultimately we should have 3-4 tables: a user table, a bookshelf (books of interest or not - possibly including the read state), ratings table (user, book, rating). For now I just put read into the ratings table because the "2h time limit".
 
 I included some simple if/else logic in the view layer to optionally insert a link for a couple of reasons:
   * creating ratings because displaying a rating of 0 for a new book is just wrong
